@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermercado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <h1>Bienvenido al Supermercado</h1>
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo Supermercado" class="logo">
+        <nav>
+            <a href="{{ url_for('main.index') }}">Inicio</a>
+            <a href="{{ url_for('main.productos') }}">Productos</a>
+            <a href="{{ url_for('main.categorias') }}">Categorías</a>
+            <a href="{{ url_for('main.pedidos') }}">Mis Pedidos</a>
+                <span></span>
+                <a href="{{ url_for('main.logout') }}">Cerrar Sesión</a>
+                <a href="{{ url_for('main.login') }}">Iniciar Sesión</a>
+                <a href="{{ url_for('main.registro') }}">Registrarse</a>
+            
+        </nav>
+
+                    <div class="{{ category }}"></div>
+    </div>
+</body>
+</html>

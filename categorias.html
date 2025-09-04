@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <a href="{{ url_for('main.nueva_categoria') }}">Agregar Categoría</a>
+    <ul>
+    </ul>
+    <a href="{{ url_for('main.index') }}">Volver al Inicio</a>
+</body>
+</html>

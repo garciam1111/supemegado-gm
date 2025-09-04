@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Lista de Pedidos</h1>
+    <ul>
+            <li>
+                Pedido #{{ pedido.id }} - Total: ${{ pedido.total }} - Estado: {{ pedido.estado }}
+                <ul>
+                    {% for item in pedido.items %}
+                        <li>{{ item.producto.nombre }} - Cantidad: {{ item.cantidad }} - Precio: ${{ item.precio_unitario }}</li>
+                </ul>
+            </li>
+    </ul>
+    <a href="{{ url_for('main.nuevo_pedido') }}">Crear Nuevo Pedido</a>
+    <a href="{{ url_for('main.index') }}">Volver al Inicio</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Pedido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Crear Nuevo Pedido</h1>
+    <form method="POST">
+        <h3>Selecciona Productos</h3>
+            <div>
+                <label>
+                    <input type="checkbox" name="producto_id" value="{{ producto.id }}">
+                    {{ producto.nombre }} - ${{ producto.precio }} (Stock: {{ producto.stock }})
+                </label>
+                <input type="number" name="cantidad" min="1" max="{{ producto.stock }}" placeholder="Cantidad">
+            </div>
+       
+        <button type="submit">Crear Pedido</button>
+    </form>
+    <a href="{{ url_for('main.index') }}">Volver al Inicio</a>
+</body>
+</html>
